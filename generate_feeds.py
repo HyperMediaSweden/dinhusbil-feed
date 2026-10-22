@@ -94,6 +94,12 @@ def rad(i):
         "regular_price": sek(pris) if har_kampanj else "",
         "campaign": "Kampanjpris" if har_kampanj else "",
         "text": f'{i.get("year")} · {skick} · {i.get("milage", 0)} mil · {bransle} · {vaxel}',
+        "length": f'{i.get("length")} cm' if i.get("length") else "",
+        "details": " · ".join(x for x in [
+            f'Längd {i.get("length")} cm' if i.get("length") else "",
+            f'{i.get("beds")} sovplatser' if i.get("beds") else "",
+            f'Årsmodell {i.get("year")}' if i.get("year") else "",
+            skick, f'{i.get("milage", 0)} mil', bransle, vaxel] if x),
         "region": i.get("filial"),
         "image_url": bild(i),
         "image_url_original": (i.get("images") or [""])[0],
