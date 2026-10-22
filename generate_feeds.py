@@ -4,11 +4,14 @@
 Körs av GitHub Actions varje timme. Skriver till docs/, som publiceras via GitHub Pages:
   docs/feed-<anläggning>.xml   – husbilar i lager, format som Hedins DataFeedWatch-feed
   docs/feed-<anläggning>.json  – samma data som JSON
+docs/img/<artikelnr>.jpg      – produktfoto med bannerremsan bortskuren (image_url pekar hit)
   docs/index.html, docs/status.json – översikt och senaste körning
 """
-import json, urllib.parse, urllib.request
+import io, json, urllib.parse, urllib.request
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
+
+from PIL import Image
 
 API = "https://dinhusbil.dso.empori.se/dsoApi/v1/objects"
 UA = {"User-Agent": "Mozilla/5.0 (HyperMedia feed-bygge)"}
@@ -16,6 +19,10 @@ FILIALER = ["Frillesås", "Jönköping", "Växjö", "Bockara"]
 TYP = 2            # 2 = husbil, 1 = husvagn, 3 = bil
 MAX_RADER = 50     # Adnamis tak
 OUT = Path(__file__).parent / "docs"
+IMG_DIR = OUT / "img"
+PAGES_URL = "https://hypermediasweden.github.io/dinhusbil-feed"
+BEHALL_HOJD = 0.81   # Din Husbils foton har en bannerremsa med logotyper längst ned (~18 %) som beskärs bort
+BILD_BREDD = 1150
 
 FUEL = {0: "", 1: "Bensin", 2: "Diesel"}
 GEARBOX = {0: "Manuell", 1: "Automat"}
@@ -40,6 +47,27 @@ def fetch(filial):
     url = API + "?" + urllib.parse.urlencode({"type": TYP, "filials": filial})
     with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=60) as r:
         return json.load(r)["items"]
+
+
+def bild(i):
+    """Hämtar första produktfotot, beskär bort bannerremsan och sparar en kopia i docs/img/.
+    Returnerar den publika URL:en, eller Emporis original-URL om något går fel."""
+    src = (i.get("images") or [""])[0]
+    if not src:
+        return ""
+    namn = f'{i.get("articleNr")}.jpg'
+    dest = IMG_DIR / namn
+    try:
+        if not dest.exists():
+            url = src.split("?")[0] + f"?mw={BILD_BREDD}&mh=768&q=92&sf=1"
+            with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=60) as r:
+                im = Image.open(io.BytesIO(r.read())).convert("RGB")
+            im = im.crop((0, 0, im.width, int(im.height * BEHALL_HOJD)))
+            im.save(dest, "JPEG", quality=85, optimize=True)
+        return f"{PAGES_URL}/img/{namn}"
+    except Exception as e:
+        print(f"  bild misslyckades för {i.get('articleNr')}: {e}")
+        return src
 
 
 def rad(i):
@@ -67,7 +95,8 @@ def rad(i):
         "campaign": "Kampanjpris" if har_kampanj else "",
         "text": f'{i.get("year")} · {skick} · {i.get("milage", 0)} mil · {bransle} · {vaxel}',
         "region": i.get("filial"),
-        "image_url": (i.get("images") or [""])[0],
+        "image_url": bild(i),
+        "image_url_original": (i.get("images") or [""])[0],
         "url": f'https://dinhusbil.nu/husbilar?item={i["uniqueId"]}',
         "_sort": visat,
     }
@@ -83,6 +112,8 @@ def skriv_xml(rows, path):
 
 def main():
     OUT.mkdir(exist_ok=True)
+    IMG_DIR.mkdir(exist_ok=True)
+    anvanda = set()
     nu = datetime.now(timezone(timedelta(hours=2))).strftime("%Y-%m-%d %H:%M")
     status = {"updated": nu, "source": API, "feeds": {}}
     for filial in FILIALER:
@@ -90,11 +121,17 @@ def main():
         rows = sorted((rad(i) for i in items), key=lambda r: r["_sort"])[:MAX_RADER]
         for r in rows:
             del r["_sort"]
+            anvanda.add(Path(r["image_url"]).name)
         s = slug(filial)
         skriv_xml(rows, OUT / f"feed-{s}.xml")
         (OUT / f"feed-{s}.json").write_text(json.dumps(rows, ensure_ascii=False, indent=1), encoding="utf-8")
         status["feeds"][filial] = {"count": len(rows), "xml": f"feed-{s}.xml", "json": f"feed-{s}.json"}
         print(f"{filial}: {len(rows)} husbilar")
+
+    # Rensa bilder för fordon som inte längre finns i lagret
+    for f in IMG_DIR.glob("*.jpg"):
+        if f.name not in anvanda:
+            f.unlink()
 
     (OUT / "status.json").write_text(json.dumps(status, ensure_ascii=False, indent=1), encoding="utf-8")
     rader = "".join(
