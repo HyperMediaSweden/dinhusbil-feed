@@ -1,9 +1,9 @@
 {
- "updated": "2026-10-23 11:56",
+ "updated": "2026-10-23 16:56",
  "source": "https://dinhusbil.dso.empori.se/dsoApi/v1/objects",
  "feeds": {
   "Frillesås": {
-   "count": 24,
+   "count": 23,
    "xml": "feed-frillesas.xml",
    "json": "feed-frillesas.json"
   },
@@ -13,7 +13,7 @@
    "json": "feed-jonkoping.json"
   },
   "Växjö": {
-   "count": 19,
+   "count": 22,
    "xml": "feed-vaxjo.xml",
    "json": "feed-vaxjo.json"
   },
