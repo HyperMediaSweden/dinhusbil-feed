@@ -1,9 +1,9 @@
 {
- "updated": "2026-11-12 11:41",
+ "updated": "2026-11-12 20:09",
  "source": "https://dinhusbil.dso.empori.se/dsoApi/v1/objects",
  "feeds": {
   "Frillesås": {
-   "count": 23,
+   "count": 22,
    "xml": "feed-frillesas.xml",
    "json": "feed-frillesas.json"
   },
