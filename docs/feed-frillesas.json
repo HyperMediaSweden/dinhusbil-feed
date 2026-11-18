@@ -1,9 +1,9 @@
 [
  {
   "vehicle_id": "1292118",
-  "title": "Knaus SPORT TI 650",
+  "title": "Knaus SPORT TI 650 / Garanti 6 mån. /",
   "make": "Knaus",
-  "model": "SPORT TI 650",
+  "model": "SPORT TI 650 / Garanti 6 mån. /",
   "year": 2008,
   "body_style": "Övrig",
   "condition": "Begagnad",
@@ -19,7 +19,7 @@
   "details": "Längd 700 cm · Årsmodell 2008 · Begagnad · 10501 mil · Diesel · Automat",
   "region": "Frillesås",
   "image_url": "https://hypermediasweden.github.io/dinhusbil-feed/img/1292118.jpg",
-  "image_url_original": "https://dinhusbil.dso.empori.se/i/UserFiles/Products/3010/3075947.jpg?mw=1150&mh=768&q=99&sf=1&bc=246,246,246",
+  "image_url_original": "https://dinhusbil.dso.empori.se/i/UserFiles/Products/3010/3480476.jpg?mw=1150&mh=768&q=99&sf=1&bc=246,246,246",
   "url": "https://dinhusbil.nu/husbilar?item=387b2210-86ed-41bc-83dd-6d0c12fcf151"
  },
  {
@@ -69,6 +69,29 @@
   "url": "https://dinhusbil.nu/husbilar?item=2933a8ef-7ce0-4e97-a41b-24f15116a17d"
  },
  {
+  "vehicle_id": "1770400",
+  "title": "Bürstner C590 Lineo *Veckans Superdeal",
+  "make": "Bürstner",
+  "model": "C590 Lineo *Veckans Superdeal",
+  "year": 2023,
+  "body_style": "Plåtis",
+  "condition": "Begagnad",
+  "mileage": "3300 mil",
+  "fuel_type": "Diesel",
+  "transmission": "Automat",
+  "beds": 3,
+  "price": "669 000 SEK",
+  "regular_price": "679 000 SEK",
+  "campaign": "Kampanjpris",
+  "text": "2023 · Begagnad · 3300 mil · Diesel · Automat",
+  "length": "598 cm",
+  "details": "Längd 598 cm · 3 sovplatser · Årsmodell 2023 · Begagnad · 3300 mil · Diesel · Automat",
+  "region": "Frillesås",
+  "image_url": "https://hypermediasweden.github.io/dinhusbil-feed/img/1770400.jpg",
+  "image_url_original": "https://dinhusbil.dso.empori.se/i/UserFiles/Products/5411/3479047.jpg?mw=1150&mh=768&q=99&sf=1&bc=246,246,246",
+  "url": "https://dinhusbil.nu/husbilar?item=74246b7c-f6cd-4908-bfb9-44df3f06e2b5"
+ },
+ {
   "vehicle_id": "1595573",
   "title": "Pössl 2 win *Dragkrok",
   "make": "Pössl",
@@ -115,6 +138,29 @@
   "url": "https://dinhusbil.nu/husbilar?item=11a81182-2eda-45bb-bd22-90406f43ba95"
  },
  {
+  "vehicle_id": "1342606",
+  "title": "Carado V 337 / Höga Långbäddar / Solcell / Cykelställ / 3,5 t",
+  "make": "Carado",
+  "model": "V 337 / Höga Långbäddar / Solcell / Cykelställ / 3,5 t",
+  "year": 2023,
+  "body_style": "Halvintegrerad",
+  "condition": "Begagnad",
+  "mileage": "1890 mil",
+  "fuel_type": "Diesel",
+  "transmission": "Manuell",
+  "beds": 0,
+  "price": "699 900 SEK",
+  "regular_price": "799 800 SEK",
+  "campaign": "Kampanjpris",
+  "text": "2023 · Begagnad · 1890 mil · Diesel · Manuell",
+  "length": "665 cm",
+  "details": "Längd 665 cm · Årsmodell 2023 · Begagnad · 1890 mil · Diesel · Manuell",
+  "region": "Frillesås",
+  "image_url": "https://hypermediasweden.github.io/dinhusbil-feed/img/1342606.jpg",
+  "image_url_original": "https://dinhusbil.dso.empori.se/i/UserFiles/Products/3105/2643080.jpg?mw=1150&mh=768&q=99&sf=1&bc=246,246,246",
+  "url": "https://dinhusbil.nu/husbilar?item=eec7611c-3d24-491d-b478-e54b895bf83e"
+ },
+ {
   "vehicle_id": "1593764",
   "title": "Bürstner Ixeo 720",
   "make": "Bürstner",
@@ -159,6 +205,29 @@
   "image_url": "https://hypermediasweden.github.io/dinhusbil-feed/img/1572882.jpg",
   "image_url_original": "https://dinhusbil.dso.empori.se/i/UserFiles/Products/3972/3066277.jpg?mw=1150&mh=768&q=99&sf=1&bc=246,246,246",
   "url": "https://dinhusbil.nu/husbilar?item=0fda44e6-c49f-4062-b4ba-b0b66b5a468f"
+ },
+ {
+  "vehicle_id": "1739983",
+  "title": "Hymer 474 Höga långbäddar / Automat / Solcell",
+  "make": "Hymer",
+  "model": "474 Höga långbäddar / Automat / Solcell",
+  "year": 2018,
+  "body_style": "Halvintegrerad",
+  "condition": "Begagnad",
+  "mileage": "4800 mil",
+  "fuel_type": "Diesel",
+  "transmission": "Automat",
+  "beds": 0,
+  "price": "799 000 SEK",
+  "regular_price": "",
+  "campaign": "",
+  "text": "2018 · Begagnad · 4800 mil · Diesel · Automat",
+  "length": "650 cm",
+  "details": "Längd 650 cm · Årsmodell 2018 · Begagnad · 4800 mil · Diesel · Automat",
+  "region": "Frillesås",
+  "image_url": "https://hypermediasweden.github.io/dinhusbil-feed/img/1739983.jpg",
+  "image_url_original": "https://dinhusbil.dso.empori.se/i/UserFiles/Products/5248/3428400.jpg?mw=1150&mh=768&q=99&sf=1&bc=246,246,246",
+  "url": "https://dinhusbil.nu/husbilar?item=475558c1-a0f8-49b9-9f8d-be88aefc94ea"
  },
  {
   "vehicle_id": "1769965",
@@ -226,7 +295,7 @@
   "details": "Längd 728 cm · 4 sovplatser · Årsmodell 2027 · Ny · 0 mil · Diesel · Automat",
   "region": "Frillesås",
   "image_url": "https://hypermediasweden.github.io/dinhusbil-feed/img/1757696.jpg",
-  "image_url_original": "https://dinhusbil.dso.empori.se/i/UserFiles/Products/5334/3431408.jpg?mw=1150&mh=768&q=99&sf=1&bc=246,246,246",
+  "image_url_original": "https://dinhusbil.dso.empori.se/i/UserFiles/Products/5334/3431412.jpg?mw=1150&mh=768&q=99&sf=1&bc=246,246,246",
   "url": "https://dinhusbil.nu/husbilar?item=03d4a62e-dc9b-43df-96d8-5c8122f39c81"
  },
  {
@@ -433,14 +502,14 @@
   "details": "Längd 707 cm · 4 sovplatser · Årsmodell 2027 · Ny · 0 mil · Diesel · Automat",
   "region": "Frillesås",
   "image_url": "https://hypermediasweden.github.io/dinhusbil-feed/img/1720961.jpg",
-  "image_url_original": "https://dinhusbil.dso.empori.se/i/UserFiles/Products/4992/3424126.jpg?mw=1150&mh=768&q=99&sf=1&bc=246,246,246",
+  "image_url_original": "https://dinhusbil.dso.empori.se/i/UserFiles/Products/4992/3424127.jpg?mw=1150&mh=768&q=99&sf=1&bc=246,246,246",
   "url": "https://dinhusbil.nu/husbilar?item=08893ccf-9230-4079-8f2a-8d8df341c0eb"
  },
  {
   "vehicle_id": "1679651",
-  "title": "Bürstner Habiton / HM 6.0",
+  "title": "Bürstner Habiton / HM 6.0 / Adventure Edition",
   "make": "Bürstner",
-  "model": "Habiton / HM 6.0",
+  "model": "Habiton / HM 6.0 / Adventure Edition",
   "year": 2026,
   "body_style": "Plåtis",
   "condition": "Ny",
