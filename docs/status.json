@@ -1,9 +1,9 @@
 {
- "updated": "2026-11-19 14:50",
+ "updated": "2026-11-19 23:23",
  "source": "https://dinhusbil.dso.empori.se/dsoApi/v1/objects",
  "feeds": {
   "Frillesås": {
-   "count": 27,
+   "count": 28,
    "xml": "feed-frillesas.xml",
    "json": "feed-frillesas.json"
   },
@@ -18,7 +18,7 @@
    "json": "feed-vaxjo.json"
   },
   "Bockara": {
-   "count": 26,
+   "count": 27,
    "xml": "feed-bockara.xml",
    "json": "feed-bockara.json"
   }
